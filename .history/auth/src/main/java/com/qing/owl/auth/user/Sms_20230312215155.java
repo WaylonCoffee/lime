@@ -1,0 +1,23 @@
+package com.qing.owl.auth.account;
+
+import java.util.Random;
+
+import lombok.Data;
+
+@Data
+public class Sms {
+
+    private PhoneNumber phoneNumber;
+    private String text;
+
+    public Sms(PhoneNumber phoneNumber, String text) {
+        this.text = text;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public static Sms genRegisterCode(PhoneNumber phoneNumber) {
+        Random random = new Random();
+        return new Sms(phoneNumber, Integer.toString(random.nextInt(1000 + random.nextInt(9000))));
+    }
+
+}

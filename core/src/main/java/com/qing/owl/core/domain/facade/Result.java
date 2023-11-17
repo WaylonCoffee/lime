@@ -1,5 +1,6 @@
-package com.qing.owl.core.domain;
+package com.qing.owl.core.domain.facade;
 
+import cn.hutool.json.JSONUtil;
 import lombok.Getter;
 
 @Getter
@@ -27,8 +28,5 @@ public class Result<T> {
     public static <T> Result<T> fail() {
          return new Result<>(ResultCode.FAILED.getCode(),ResultCode.FAILED.getMsg());
     }
-
-    public static void main(String[] args) {
-        System.out.println("Result.fail()");
-    }
+    
 }

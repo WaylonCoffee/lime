@@ -1,4 +1,4 @@
-package com.qing.owl.core.domain.facade;
+package com.qing.owl.core.infra.common.facade;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

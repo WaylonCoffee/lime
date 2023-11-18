@@ -1,4 +1,4 @@
-package com.qing.owl.core.domain.exception;
+package com.qing.owl.core.infra.common.exception;
 
 import lombok.Getter;
 

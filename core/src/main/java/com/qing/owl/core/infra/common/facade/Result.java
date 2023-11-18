@@ -1,4 +1,4 @@
-package com.qing.owl.core.domain.facade;
+package com.qing.owl.core.infra.common.facade;
 
 import cn.hutool.json.JSONUtil;
 import lombok.Getter;

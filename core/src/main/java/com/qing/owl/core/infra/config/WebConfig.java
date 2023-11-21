@@ -9,7 +9,7 @@ import com.qing.owl.core.infra.interceptor.LogInterceptor;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-    
+
     @Bean
     public LogInterceptor logInterceptor() {
         return new LogInterceptor();

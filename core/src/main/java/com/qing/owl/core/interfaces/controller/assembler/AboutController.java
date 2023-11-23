@@ -4,16 +4,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.extern.slf4j.Slf4j;
+import com.qing.owl.core.infra.common.annotation.ResponseJsonResultBody;
+import com.qing.owl.core.infra.common.exception.SystemErrorCode;
+import com.qing.owl.core.infra.common.exception.SystemException;
 
-@RestController
 @RequestMapping("about")
-@Slf4j
+@RestController
+@ResponseJsonResultBody
 public class AboutController {
     
     @GetMapping("health")
     public String health(){
-      log.error("null32423");
-        return "hello";
+        throw new SystemException(SystemErrorCode.REQUEST_VALIDATION_FAILED);
+        //return "hello";
     }
 }

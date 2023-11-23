@@ -1,7 +1,7 @@
 package com.qing.owl.core.infra.common.exception;
 
 public enum SystemErrorCode implements ErrorCode{
-
+    REQUEST_VALIDATION_FAILED(400, "请求数据格式验证失败"),
     SYSTEM_ERROR(500, "系统错误");
 
     private int status;

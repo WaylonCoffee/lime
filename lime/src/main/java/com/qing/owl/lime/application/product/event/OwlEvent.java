@@ -1,4 +1,4 @@
-package com.qing.owl.lime.application.event;
+package com.qing.owl.lime.application.product.event;
 
 public class OwlEvent {
     /**

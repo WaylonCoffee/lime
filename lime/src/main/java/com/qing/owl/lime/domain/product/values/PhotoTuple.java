@@ -1,4 +1,4 @@
-package com.qing.owl.lime.domain.values;
+package com.qing.owl.lime.domain.product.values;
 
 import java.util.ArrayList;
 import java.util.List;

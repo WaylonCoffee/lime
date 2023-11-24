@@ -1,4 +1,4 @@
-package com.qing.owl.lime.application.query;
+package com.qing.owl.lime.application.product.query;
 
 public class OwlQuery {
     /**

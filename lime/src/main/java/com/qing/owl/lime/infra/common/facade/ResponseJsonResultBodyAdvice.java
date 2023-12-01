@@ -11,16 +11,20 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qing.owl.lime.infra.common.annotation.ResponseJsonResultBody;
 import cn.hutool.core.annotation.AnnotationUtil;
-import cn.hutool.json.JSONUtil;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
 @RestControllerAdvice
+@RequiredArgsConstructor
 public class ResponseJsonResultBodyAdvice implements ResponseBodyAdvice<Object>{
     
     private static final Class<? extends Annotation> ANNOTATION_TYPE = ResponseJsonResultBody.class;
 
+    private final ObjectMapper objectMapper;
     @Override
     @Nullable
     @SneakyThrows
@@ -36,7 +40,7 @@ public class ResponseJsonResultBodyAdvice implements ResponseBodyAdvice<Object>{
         }
        
         if (body instanceof String || Objects.equals(returnClass, String.class)) {
-            String value = JSONUtil.toJsonStr(Result.success(body));
+            String value = objectMapper.writeValueAsString(Result.success(body));
             return value;
         }
         return Result.success(body);
